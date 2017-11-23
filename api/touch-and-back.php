@@ -1,13 +1,13 @@
 <?php
-header('Content-type: text/plain; charset=UTF-8');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+
 require_once('../dst/php/phpQuery-onefile.php');
 date_default_timezone_set('Asia/Tokyo');
-$day =  date('sd');
+$day =  date('d');
 
 $from = $_POST['from'];
 $to = $_POST['to'];
-// $from = "%E9%83%BD%E8%B3%80";
-// $to = "%E5%8D%83%E8%91%89";
 $URL = 'https://transit.yahoo.co.jp/search/result?&from='.$from.'&to='.$to;
 
 $html = file_get_contents($URL);
