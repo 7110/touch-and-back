@@ -1,6 +1,6 @@
 <?php
 header('Content-type: text/plain; charset=UTF-8');
-require_once('./dst/php/phpQuery-onefile.php');
+require_once('../dst/php/phpQuery-onefile.php');
 date_default_timezone_set('Asia/Tokyo');
 $day =  date('sd');
 
