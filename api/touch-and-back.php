@@ -14,12 +14,12 @@ $html = file_get_contents($URL);
 $doc = phpQuery::newDocument($html);
 $time = pq($doc['#rsltlst']->find('.time:eq(0)'));
 
-$departure = explode('→', $time->text())[0];
+$departure = explode('→', $time->text());
 $arrival= $time->find('.mark')->text();
 $required = $time->find('.small')->text();
 
 $res = array(
-  'departure' => $departure,
+  'departure' => $departure[0],
   'arrival' => $arrival,
   'required' => $required,
   'day' => $day
@@ -34,14 +34,14 @@ $html2 = file_get_contents($URL2);
 $doc2 = phpQuery::newDocument($html2);
 $time2 = pq($doc2['#rsltlst']->find('.time:eq(0)'));
 
-$departure2 = explode('→', $time2->text())[0];
+$departure2 = explode('→', $time2->text());
 $arrival2= $time2->find('.mark')->text();
 $required2 = $time2->find('.small')->text();
 
-$res['departure2'] = $departure2;
+$res['departure2'] = $departure2[0];
 $res['arrival2'] = $arrival2;
 $res['required2'] = $required2;
 
 
 header('Content-Type:application/json; charset=utf-8');
-echo json_encode($res, JSON_UNESCAPED_UNICODE);
+echo json_encode($res, 128);
