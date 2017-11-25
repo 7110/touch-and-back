@@ -74,7 +74,7 @@
 	      this.status = "Loading";
 	      this.result = undefined;
 	      axios.post(
-	        'http://127.0.0.1:2000/api/touch-and-back.php',
+	        '../../api/touch-and-back.php',
 	        querystring.stringify({
 	          from: encodeURI(this.from),
 	          to: encodeURI(this.to)
