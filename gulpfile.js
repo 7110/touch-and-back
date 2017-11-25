@@ -7,7 +7,7 @@ const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es');
 const webpack = require('gulp-webpack');
 
 
@@ -69,7 +69,7 @@ gulp.task('es6', () => {
   .pipe(rename({
     suffix: '.min'
   }))
-  .pipe(uglify())
+  .pipe(uglify.default())
   .pipe(gulp.dest(paths.dst.js));
 });
 
