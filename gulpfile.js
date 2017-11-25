@@ -1,13 +1,14 @@
 const browserSync = require('browser-sync');
 const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
-const babel = require('gulp-babel');
 const cleanCSS = require('gulp-clean-css');
 const header = require('gulp-header');
+const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es');
+const webpack = require('gulp-webpack');
 
 
 const namespace = '7110';
@@ -32,6 +33,7 @@ const paths = {
 // compile scss
 gulp.task('sass', () => {
   gulp.src(paths.src.scss)
+  .pipe(plumber())
   .pipe(sourcemaps.init())
   .pipe(autoprefixer({
     browsers: ['last 2 versions']
@@ -59,14 +61,15 @@ gulp.task('sass', () => {
 // compile es6
 gulp.task('es6', () => {
   gulp.src(paths.src.es6)
-  .pipe(sourcemaps.init())
-  .pipe(babel())
-  .pipe(sourcemaps.write())
+  .pipe(plumber())
+  .pipe(webpack(
+    require('./webpack.config.js')
+  ))
   .pipe(gulp.dest(paths.dst.js))
   .pipe(rename({
     suffix: '.min'
   }))
-  .pipe(uglify())
+  .pipe(uglify.default())
   .pipe(gulp.dest(paths.dst.js));
 });
 

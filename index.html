@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+  <link rel="stylesheet" href="dst/css/style.css">
+  <title>touch and back</title>
+</head>
+<body>
+  <div id="app" v-bind:class="{isLoading: status=='Loading'}">
+
+    <form class="blForm">
+      <ul class="elInput">
+        <li class="elItem">
+          <span class="elKey">出発</span><input type="text" v-model="from" class="elValue" placeholder="駅、施設、住所">
+        </li>
+        <li class="elItem">
+          <span class="elKey">到着</span><input type="text" v-model="to" class="elValue" placeholder="駅、施設、住所">
+        </li>
+      </ul>
+      <p class="elButton" v-on:click="post()">検索</p>
+    </form>
+
+    <transition name="fade">
+      <div id="results" v-if="show" transition>
+        <div class="blResult">
+          <p class="elItem">行</p>
+          <div class="elFrom">
+            <p class="elRegion">{{from}}</p>
+            <p class="elTime">{{result.departure}}</p>
+          </div>
+          <div class="elTo">
+            <p class="elRegion">{{to}}</p>
+            <p class="elTime">{{result.arrival}}<span class="elRequired">{{result.required}}</span></p>
+          </div>
+        </div>
+
+        <div class="blResult">
+          <p class="elItem">帰</p>
+          <div class="elFrom">
+            <p class="elRegion">{{to}}</p>
+            <p class="elTime">{{result.departure2}}</p>
+          </div>
+          <div class="elTo">
+            <p class="elRegion">{{from}}</p>
+            <p class="elTime">{{result.arrival2}}<span class="elRequired">{{result.required2}}</span></p>
+          </div>
+        </div>
+      </div>
+    </transition>
+
+    <!-- <button v-on:click="show = !show">Toggle</button> -->
+    <!-- <p><pre>data: {{$data}}</pre></p> -->
+  </div>
+
+  <script src="dst/js/app.js"></script>
+</body>
+</html>

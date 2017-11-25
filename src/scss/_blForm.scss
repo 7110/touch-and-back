@@ -1,0 +1,56 @@
+.blForm {
+  .elInput{
+    list-style-type: none;
+  }
+
+  .elItem {
+    width: 100%;
+    height: 48px;
+    margin-top: 30px;
+  }
+
+  .elKey,
+  .elValue {
+    line-height: 48px;
+    font-size: 24px;
+    display: inline-block;
+  }
+
+  .elKey {
+    width: 25%;
+    text-align: center;
+    color: #fff;
+    border-top: 1px solid #40816c;
+    border-bottom: 1px solid #40816c;
+    border-left: 1px solid #40816c;
+    background-color: #60a36c;
+  }
+
+  .elValue {
+    width: 75%;
+    padding-left: 20px;
+    color: #333;
+    border: 1px solid #ddd;
+    background-color: #fff;
+
+    &:focus {
+      border: 1px solid #8ff;
+    }
+  }
+
+  .elButton {
+    width: 280px;
+    height: 48px;
+    margin: 30px auto 0;
+    line-height: 48px;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #d27417;
+    background-color: #f29437;
+
+    &:hover {
+      cursor : pointer;
+    }
+  }
+}
