@@ -5,6 +5,11 @@ module.exports = {
   output: {
     filename: '[name].js'
   },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.common.js'
+    }
+  },
   module: {
     loaders: [
       {
