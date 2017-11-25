@@ -20,8 +20,7 @@
     "gulp-webpack": "^1.5.0"
   },
   "devDependencies": {
-    "axios": "^0.17.1",
-    "urlsearchparams": "^0.1.1"
+    "axios": "^0.17.1"
   },
   "scripts": {
     "default": "gulp default",
