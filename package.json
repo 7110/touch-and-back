@@ -27,6 +27,9 @@
     "default": "gulp default",
     "compile": "gulp compile"
   },
+  "babel": {
+    "presets": ["es2015"]
+  },
   "author": "7110",
   "license": "ISC",
   "homepage": "https://github.com/7110/"
