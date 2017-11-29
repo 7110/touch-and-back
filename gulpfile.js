@@ -1,6 +1,7 @@
 const browserSync = require('browser-sync');
 const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
 const cleanCSS = require('gulp-clean-css');
 const header = require('gulp-header');
 const plumber = require('gulp-plumber');
@@ -65,6 +66,7 @@ gulp.task('es6', () => {
   .pipe(webpack(
     require('./webpack.config.js')
   ))
+  .pipe(babel())
   .pipe(gulp.dest(paths.dst.js))
   .pipe(rename({
     suffix: '.min'
