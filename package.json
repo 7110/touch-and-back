@@ -15,6 +15,7 @@
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-header": "^1.8.9",
     "gulp-plumber": "^1.1.0",
@@ -29,7 +30,9 @@
     "compile": "gulp compile"
   },
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "env"
+    ]
   },
   "author": "7110",
   "license": "ISC",
