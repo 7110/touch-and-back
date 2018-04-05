@@ -4,7 +4,7 @@ You can go to your destination and check the time it takes to Flip flops
 <img src="https://7110.github.io/touch-and-back/dst/images/og.png" width="420px">
 
 ## URL
-https://7110.github.io/touch-and-back/index.html
+https://7110.github.io/touch-and-back/
 
 
 ## Libraries
